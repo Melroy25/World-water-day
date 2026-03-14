@@ -12,6 +12,12 @@
   body {
     @apply bg-[#010d1f] text-white antialiased;
     font-family: 'Inter', sans-serif;
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
   }
 }
 
