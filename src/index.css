@@ -43,11 +43,11 @@
 
 /* ── Subtle cursor glow (desktop only) ── */
 @media (pointer: fine) {
-  * {
-    cursor: none;
+  body {
+    /* cursor: none; removed to fix cursor visibility issue */
   }
 
-  body::after {
+  .cursor-glow {
     content: '';
     position: fixed;
     width: 20px;
