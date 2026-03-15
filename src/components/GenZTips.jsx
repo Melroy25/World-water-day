@@ -117,18 +117,23 @@ export default function GenZTips() {
                 </div>
 
                 {/* 11th Item: Simple Idea Banner */}
-                <div className="relative rounded-3xl overflow-hidden p-10 md:p-16 mb-16 border border-[#2dd4bf]/30 max-w-4xl mx-auto">
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#0284c7]/20 to-[#2dd4bf]/20"></div>
-                    <div className="absolute inset-0 bg-[#0f172a]/80 backdrop-blur-xl"></div>
+                <div className="relative rounded-3xl overflow-hidden p-10 md:p-16 mb-16 border border-[#2dd4bf]/30 max-w-4xl mx-auto shadow-2xl">
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#020617] via-[#0284c7]/40 to-[#020617]"></div>
+                    <img 
+                        src="/img_genz_collective.png" 
+                        alt="" 
+                        className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-overlay"
+                    />
+                    <div className="absolute inset-0 bg-[#0f172a]/70 backdrop-blur-[2px]"></div>
                     <div className="relative z-10 text-center flex flex-col items-center">
-                        <div className="w-16 h-16 bg-[#2dd4bf]/10 rounded-full flex items-center justify-center mb-6 shadow-[0_0_20px_rgba(45,212,191,0.2)]">
-                            <span className="text-3xl">💡</span>
+                        <div className="w-16 h-16 bg-[#2dd4bf]/20 rounded-full flex items-center justify-center mb-6 shadow-[0_0_30px_rgba(45,212,191,0.4)] backdrop-blur-md border border-[#2dd4bf]/30">
+                            <span className="text-3xl drop-shadow-lg">💡</span>
                         </div>
-                        <h3 className="font-display font-bold text-3xl md:text-4xl text-white mb-4">
+                        <h3 className="font-display font-bold text-3xl md:text-4xl text-white mb-4 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
                             The Power of Collective Action
                         </h3>
-                        <p className="text-[#94a3b8] text-xl leading-relaxed max-w-2xl mx-auto font-medium">
-                            If every student saves just <strong className="text-[#2dd4bf]">1–2 liters a day</strong>, thousands of liters can be saved in a single college every month.
+                        <p className="text-cyan-50 text-xl leading-relaxed max-w-2xl mx-auto font-medium drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]">
+                            If every student saves just <strong className="text-[#2dd4bf] drop-shadow-[0_0_8px_rgba(45,212,191,0.5)]">1–2 liters a day</strong>, thousands of liters can be saved in a single college every month.
                         </p>
                     </div>
                 </div>
