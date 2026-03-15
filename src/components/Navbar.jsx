@@ -64,9 +64,6 @@ export default function Navbar() {
 
                 {/* Right side CTA & Gen Z Link */}
                 <div className="hidden md:flex items-center gap-6">
-                    <span className="text-[#2dd4bf] font-medium tracking-wide whitespace-nowrap">
-                        &mdash; Eco Club
-                    </span>
                     {!isSpecialPage ? (
                         <Link 
                             to="/action" 
@@ -94,9 +91,9 @@ export default function Navbar() {
                 </button>
             </nav>
 
-            {/* Mobile menu */}
+            {/* Mobile menu - Highly Opaque Background to fix visibility overlap */}
             {open && (
-                <div className="md:hidden glass-dark mx-4 mt-2 rounded-2xl p-4">
+                <div className="md:hidden bg-[#040e25]/95 backdrop-blur-2xl border border-[#1e293b] shadow-[0_20px_50px_rgba(0,0,0,0.5)] mx-4 mt-2 rounded-2xl p-6 relative z-[100]">
                     <ul className="flex flex-col gap-3">
                         {!isSpecialPage ? links.map(l => (
                             <li key={l.href}>
@@ -120,15 +117,10 @@ export default function Navbar() {
                             </li>
                         ))}
                         <li>
-                            <span className="block text-[#2dd4bf] py-2 px-3 tracking-wide">
-                                &mdash; Eco Club
-                            </span>
-                        </li>
-                        <li>
                             <Link 
                                 to={isSpecialPage ? "/" : "/action"}
                                 onClick={() => setOpen(false)}
-                                className="flex items-center justify-between w-full mt-2 bg-[#2dd4bf]/10 border border-[#2dd4bf]/30 text-[#2dd4bf] px-4 py-3 rounded-xl font-bold tracking-wide"
+                                className="flex items-center justify-between w-full mt-4 bg-[#2dd4bf]/10 border border-[#2dd4bf]/30 text-[#2dd4bf] px-4 py-3 rounded-xl font-bold tracking-wide"
                             >
                                 {isSpecialPage ? 'Back Home' : 'Gen Z Action'} <ArrowRight size={18} />
                             </Link>
