@@ -1,19 +1,16 @@
-import { Droplets, Instagram, ExternalLink } from 'lucide-react'
-import { Link } from 'react-router-dom'
-
-const navLinks = [
-    { label: 'Why Water', href: '/#importance' },
-    { label: 'History', href: '/#history' },
-    { label: 'Watch', href: '/#videos' },
-]
+import { Droplets, Instagram, ExternalLink, ArrowRight } from 'lucide-react'
+import { Link, useLocation } from 'react-router-dom'
 
 export default function Footer() {
+    const location = useLocation()
+    const isSpecialPage = location.pathname !== '/'
+
     return (
-        <footer className="relative pt-12 pb-6 px-4 border-t border-cyan-900/30 z-10 w-full mt-auto bg-[#010816]">
+        <footer className="relative pt-12 pb-6 px-4 border-t border-cyan-900/30 z-10 w-full mt-auto bg-transparent">
             <div className="max-w-4xl mx-auto flex flex-col items-center gap-8 text-center">
                 
                 {/* Links Row */}
-                <div className="flex flex-wrap items-center justify-center gap-6">
+                <div className="flex flex-wrap items-center justify-center gap-6 w-full">
                     {/* Logo & Info */}
                     <div className="flex items-center gap-3 mr-auto md:mr-0">
                         <div
@@ -34,17 +31,23 @@ export default function Footer() {
 
                     <div className="flex-1 min-w-full md:min-w-0" />
 
-                    {/* Nav links */}
+                    {/* Gen Z Action Button */}
                     <div className="flex gap-6 flex-wrap justify-center">
-                        {navLinks.map(l => (
-                            <Link
-                                key={l.href}
-                                to={l.href}
-                                className="text-cyan-300/70 hover:text-[#2dd4bf] text-sm transition-colors uppercase tracking-wider font-semibold"
+                        {!isSpecialPage ? (
+                            <Link 
+                                to="/action" 
+                                className="flex items-center gap-2 bg-[#2dd4bf]/10 border border-[#2dd4bf]/30 hover:bg-[#2dd4bf]/20 text-[#2dd4bf] px-5 py-2 rounded-full text-sm font-bold tracking-wide transition-all hover:scale-105 shadow-[0_0_15px_rgba(45,212,191,0.1)] hover:shadow-[0_0_20px_rgba(45,212,191,0.3)]"
                             >
-                                {l.label}
+                                Gen Z Action <ArrowRight size={16} />
                             </Link>
-                        ))}
+                        ) : (
+                            <Link 
+                                to="/" 
+                                className="flex items-center gap-2 bg-[#2dd4bf]/10 border border-[#2dd4bf]/30 hover:bg-[#2dd4bf]/20 text-[#2dd4bf] px-5 py-2 rounded-full text-sm font-bold tracking-wide transition-all hover:scale-105 shadow-[0_0_15px_rgba(45,212,191,0.1)] hover:shadow-[0_0_20px_rgba(45,212,191,0.3)]"
+                            >
+                                Back Home <ArrowRight size={16} />
+                            </Link>
+                        )}
                     </div>
 
                     <div className="flex-1 min-w-full md:min-w-0" />
@@ -72,7 +75,7 @@ export default function Footer() {
                 </div>
 
                 {/* Divider */}
-                <div className="w-full h-px bg-gradient-to-r from-transparent via-[#1e293b] to-transparent w-3/4 max-w-xl" />
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-[#1e293b] to-transparent max-w-xl" />
 
                 {/* Credit */}
                 <div className="flex flex-col gap-1 items-center">
