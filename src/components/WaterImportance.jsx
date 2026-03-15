@@ -2,9 +2,9 @@ import { useEffect, useRef } from 'react'
 import { Droplet, Sprout, Fish, HeartPulse } from 'lucide-react'
 
 const stats = [
-    { value: '2.2B', label: 'People lack safe\ndrinking water', source: 'WHO / UNICEF 2023' },
-    { value: '1,000+', label: 'Children die daily\nfrom unsafe water', source: 'GLOBAL HEALTH REPORT' },
-    { value: '40%', label: 'Of the world faces\nwater stress', source: 'UN WATER 2025' },
+    { value: '2.2B', label: 'People lack safe\ndrinking water', source: 'WHO / UNICEF 2023', bg: '/stat_2_2b.png' },
+    { value: '1,000+', label: 'Children die daily\nfrom unsafe water', source: 'GLOBAL HEALTH REPORT', bg: '/stat_children.png' },
+    { value: '40%', label: 'Of the world faces\nwater stress', source: 'UN WATER 2025', bg: '/stat_stress.png' },
 ]
 
 const whyCards = [
@@ -72,22 +72,33 @@ export default function WaterImportance() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
                     {stats.map((s, i) => (
                         <RevealCard key={s.value} delay={i * 100}>
-                            <div className="bg-[#0f172a]/80 backdrop-blur-sm border border-[#1e293b] rounded-2xl p-8 h-full flex flex-col hover:border-[#2dd4bf]/40 transition-colors">
-                                <div
-                                    className="font-display font-bold text-5xl md:text-6xl mb-4"
-                                    style={{
-                                        background: 'linear-gradient(135deg, #5eead4, #2dd4bf)',
-                                        WebkitBackgroundClip: 'text',
-                                        WebkitTextFillColor: 'transparent',
-                                    }}
-                                >
-                                    {s.value}
-                                </div>
-                                <div className="text-white text-lg font-medium leading-relaxed mb-6 whitespace-pre-line flex-1">
-                                    {s.label}
-                                </div>
-                                <div className="text-[#64748b] text-xs font-bold uppercase tracking-widest mt-auto">
-                                    {s.source}
+                            <div className="relative bg-[#0f172a]/80 backdrop-blur-sm border border-[#1e293b] rounded-2xl p-8 h-full flex flex-col hover:border-[#2dd4bf]/40 transition-colors overflow-hidden group">
+                                {/* Background Image */}
+                                <img
+                                    src={s.bg}
+                                    alt=""
+                                    className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity duration-500"
+                                />
+                                {/* Gradient Overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/80 to-transparent"></div>
+
+                                <div className="relative z-10 flex flex-col h-full">
+                                    <div
+                                        className="font-display font-bold text-5xl md:text-6xl mb-4"
+                                        style={{
+                                            background: 'linear-gradient(135deg, #5eead4, #2dd4bf)',
+                                            WebkitBackgroundClip: 'text',
+                                            WebkitTextFillColor: 'transparent',
+                                        }}
+                                    >
+                                        {s.value}
+                                    </div>
+                                    <div className="text-white text-lg font-medium leading-relaxed mb-6 whitespace-pre-line flex-1">
+                                        {s.label}
+                                    </div>
+                                    <div className="text-[#64748b] text-xs font-bold uppercase tracking-widest mt-auto">
+                                        {s.source}
+                                    </div>
                                 </div>
                             </div>
                         </RevealCard>
