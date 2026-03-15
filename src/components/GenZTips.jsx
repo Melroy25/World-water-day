@@ -5,61 +5,61 @@ const tips = [
         icon: '🚿',
         title: 'Take Shorter Showers',
         desc: 'Try limiting your shower to 5 minutes. Even reducing by 2–3 minutes can save a lot of water every day.',
-        bg: '/img_health.png',
+        bg: '/img_genz_shower.png',
     },
     {
         icon: '🪥',
         title: 'Turn Off While Brushing',
         desc: 'Don’t let water run while brushing teeth. Turn it on only when rinsing.',
-        bg: '/stat_children.png',
+        bg: '/img_genz_faucet.png',
     },
     {
         icon: '🔧',
         title: 'Fix Leaking Taps',
         desc: 'A small leak can waste hundreds of liters of water a month. If you notice one at home, college, or hostel, report it.',
-        bg: '/img_iot.png',
+        bg: '/img_iot.png', // Reusing appropriate tech image for fixing taps
     },
     {
         icon: '🚗',
         title: 'Bucket Over Hose',
         desc: 'Use a bucket instead of a hose for washing vehicles. Buckets use much less water than a running hose.',
-        bg: '/stat_stress.png',
+        bg: '/img_genz_carwash.png',
     },
     {
         icon: '♻️',
         title: 'Reuse Water',
         desc: 'Water used for washing vegetables or rice can be reused to water plants.',
-        bg: '/img_eco.png',
+        bg: '/img_genz_reuse.png',
     },
     {
         icon: '👕',
         title: 'Full Washing Loads',
         desc: 'Run washing machines only with full loads. Washing fewer clothes at once wastes water and electricity.',
-        bg: '/stat_2_2b.png',
+        bg: '/img_genz_washing.png',
     },
     {
         icon: '🧴',
         title: 'Refillable Bottles',
         desc: 'Use refillable water bottles. This reduces plastic waste and helps you value water instead of wasting half-full bottles.',
-        bg: '/img_life.png',
+        bg: '/img_genz_bottle.png',
     },
     {
         icon: '📱',
         title: 'Spread Awareness',
         desc: 'Share tips, reels, or posts about saving water to influence friends and followers.',
-        bg: '/img_health.png',
+        bg: '/img_genz_social.png',
     },
     {
         icon: '🌱',
         title: 'Water Plants Smartly',
         desc: 'Water plants early morning or evening. This reduces evaporation so plants actually absorb the water.',
-        bg: '/img_agri.png',
+        bg: '/img_genz_plants.png',
     },
     {
         icon: '🥤',
         title: 'No Cafeteria Waste',
         desc: 'Don’t waste drinking water in cafeterias or events. Take only what you will drink instead of filling cups and leaving them half full.',
-        bg: '/sjec_green.png',
+        bg: '/img_genz_cafeteria.png',
     },
 ]
 
@@ -91,24 +91,24 @@ export default function GenZTips() {
                             key={i} 
                             className="group relative rounded-3xl overflow-hidden min-h-[300px] shadow-2xl transition-transform duration-500 hover:-translate-y-2 border border-[#1e293b] hover:border-[#2dd4bf]/40"
                         >
-                            {/* Background Image */}
+                            {/* Background Image - OPACITY INCREASED */}
                             <img 
                                 src={tip.bg} 
                                 alt="" 
-                                className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity duration-700"
+                                className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity duration-700"
                             />
-                            {/* Overlay Gradient */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/80 to-[#020617]/40"></div>
+                            {/* Overlay Gradient - LIGHTENED */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#020617]/90 via-[#020617]/60 to-[#020617]/20 group-hover:from-[#020617]/80"></div>
                             
                             {/* Content */}
                             <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                                <div className="text-4xl mb-4 transform transition-transform duration-500 group-hover:scale-110 origin-bottom-left">
+                                <div className="text-4xl mb-4 transform transition-transform duration-500 group-hover:scale-110 origin-bottom-left drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">
                                     {tip.icon}
                                 </div>
-                                <h3 className="font-display font-bold text-2xl text-white mb-3 tracking-wide drop-shadow-lg">
+                                <h3 className="font-display font-bold text-2xl text-white mb-3 tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
                                     {tip.title}
                                 </h3>
-                                <p className="text-[#94a3b8] text-base leading-relaxed">
+                                <p className="text-cyan-50 font-medium text-base leading-relaxed drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
                                     {tip.desc}
                                 </p>
                             </div>
