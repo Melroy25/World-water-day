@@ -69,7 +69,7 @@ export default function GenZTips() {
     }, [])
 
     return (
-        <div className="min-h-screen bg-[#010816] pt-32 pb-24 px-6 md:px-12 relative z-10 w-full overflow-hidden">
+        <div className="min-h-screen bg-transparent pt-32 pb-24 px-6 md:px-12 relative z-10 w-full overflow-hidden">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
                     <span className="text-[#2dd4bf] text-sm font-bold uppercase tracking-[0.2em] bg-[#020617]/50 px-4 py-1 rounded-full border border-[#2dd4bf]/20">
@@ -78,7 +78,7 @@ export default function GenZTips() {
                     <h1 className="font-display font-bold text-5xl md:text-6xl text-white mt-6 mb-6">
                         What Gen Z Can Do
                     </h1>
-                    <p className="text-[#94a3b8] text-lg max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-[#94a3b8] text-lg max-w-2xl mx-auto leading-relaxed drop-shadow-md bg-[#020617]/30 rounded-2xl p-4">
                         We are the generation that will feel the impact of the water crisis the most. 
                         But we are also the most powerful. Here is how you can make a real difference starting today.
                     </p>
@@ -131,17 +131,6 @@ export default function GenZTips() {
                             If every student saves just <strong className="text-[#2dd4bf]">1–2 liters a day</strong>, thousands of liters can be saved in a single college every month.
                         </p>
                     </div>
-                </div>
-
-                {/* Back to Home CTA */}
-                <div className="text-center">
-                    <a href="/" className="inline-flex items-center justify-center px-10 py-4 rounded-full font-bold text-white transition-all hover:scale-105"
-                        style={{
-                            background: 'linear-gradient(135deg, #0284c7, #0369a1)',
-                            boxShadow: '0 10px 30px rgba(2, 132, 199, 0.3)',
-                        }}>
-                        ← Back to Home
-                    </a>
                 </div>
             </div>
         </div>

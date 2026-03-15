@@ -31,27 +31,6 @@ export default function Footer() {
 
                     <div className="flex-1 min-w-full md:min-w-0" />
 
-                    {/* Gen Z Action Button */}
-                    <div className="flex gap-6 flex-wrap justify-center">
-                        {!isSpecialPage ? (
-                            <Link 
-                                to="/action" 
-                                className="flex items-center gap-2 bg-[#2dd4bf]/10 border border-[#2dd4bf]/30 hover:bg-[#2dd4bf]/20 text-[#2dd4bf] px-5 py-2 rounded-full text-sm font-bold tracking-wide transition-all hover:scale-105 shadow-[0_0_15px_rgba(45,212,191,0.1)] hover:shadow-[0_0_20px_rgba(45,212,191,0.3)]"
-                            >
-                                Gen Z Action <ArrowRight size={16} />
-                            </Link>
-                        ) : (
-                            <Link 
-                                to="/" 
-                                className="flex items-center gap-2 bg-[#2dd4bf]/10 border border-[#2dd4bf]/30 hover:bg-[#2dd4bf]/20 text-[#2dd4bf] px-5 py-2 rounded-full text-sm font-bold tracking-wide transition-all hover:scale-105 shadow-[0_0_15px_rgba(45,212,191,0.1)] hover:shadow-[0_0_20px_rgba(45,212,191,0.3)]"
-                            >
-                                Back Home <ArrowRight size={16} />
-                            </Link>
-                        )}
-                    </div>
-
-                    <div className="flex-1 min-w-full md:min-w-0" />
-
                     {/* Socials & Forms */}
                     <div className="flex items-center gap-4 border-l border-[#1e293b] pl-6 ml-auto md:ml-0">
                         <a 
