@@ -159,29 +159,6 @@ export default function VideosSection() {
                     ))}
                 </div>
 
-                {/* SJEC Initiatives */}
-                <div
-                    className="mt-14 rounded-2xl p-8 text-center"
-                    style={{
-                        background: 'rgba(0, 30, 60, 0.6)',
-                        backdropFilter: 'blur(12px)',
-                        border: '1px solid rgba(0, 180, 255, 0.15)',
-                        boxShadow: '0 0 40px rgba(0, 100, 200, 0.1)',
-                    }}
-                >
-                    <div className="text-5xl mb-4">🌿</div>
-                    <h3 className="font-display font-bold text-white text-2xl mb-3">
-                        SJEC Green Initiatives
-                    </h3>
-                    <p className="text-cyan-100/70 text-base max-w-2xl mx-auto leading-relaxed mb-4">
-                        St Joseph Engineering College is committed to a sustainable environment. 
-                        Our initiatives focus on managing water usage efficiently through strict conservation practices, 
-                        extensive campus-wide rainwater harvesting, and maintaining a clean, green, and pollution-free campus environment.
-                    </p>
-                    <p className="text-cyan-400 font-semibold text-sm mt-4">
-                        🏛️ World Water Day — March 22, 2026 · Eco Club SJEC, Mangaluru
-                    </p>
-                </div>
             </div>
         </section>
     )

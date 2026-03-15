@@ -19,67 +19,66 @@ export default function Hero() {
     return (
         <section
             id="hero"
-            className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20"
+            className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-24 pt-20"
         >
-            {/* Frosted glass card overlaying the ocean */}
             <div
                 ref={textRef}
-                className="relative max-w-3xl mx-auto"
+                className="relative max-w-4xl w-full mx-auto"
             >
-                {/* Glowing badge */}
-                <div className="inline-flex items-center gap-2 mb-8 px-5 py-2 rounded-full border border-cyan-400/40 bg-cyan-900/20 backdrop-blur-sm">
-                    <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping absolute" />
-                    <span className="w-2 h-2 rounded-full bg-cyan-400 relative" />
-                    <span className="text-cyan-300 text-sm font-semibold tracking-wide">March 22, 2026 · World Water Day</span>
+                {/* Top Badge */}
+                <div className="flex items-center gap-3 mb-8 text-[#2dd4bf] tracking-widest text-sm font-semibold uppercase">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
+                        <line x1="4" y1="22" x2="4" y2="15"></line>
+                    </svg>
+                    MARCH 22, 2026
                 </div>
 
                 {/* Big headline */}
-                <h1 className="font-display font-black leading-[1.05] mb-6">
+                <h1 className="font-display font-bold leading-[1.1] mb-8">
                     <span
-                        className="block text-5xl sm:text-7xl md:text-8xl text-white"
-                        style={{ textShadow: '0 0 60px rgba(0,200,255,0.4)' }}
+                        className="block text-6xl sm:text-8xl md:text-[110px] text-white tracking-tight"
                     >
-                        Valuing
+                        Valuing Every
                     </span>
                     <span
-                        className="block text-5xl sm:text-7xl md:text-8xl"
-                        style={{
-                            background: 'linear-gradient(90deg, #22d3ee, #06b6d4, #2dd4bf, #38bdf8)',
-                            WebkitBackgroundClip: 'text',
-                            WebkitTextFillColor: 'transparent',
-                            backgroundClip: 'text',
-                            textShadow: 'none',
-                        }}
+                        className="block text-6xl sm:text-8xl md:text-[110px] text-[#5eead4] tracking-tight mt-2"
                     >
-                        Every Drop.
+                        Drop
                     </span>
                 </h1>
 
-                <p className="text-cyan-100/80 text-lg md:text-xl max-w-xl mx-auto leading-relaxed mb-4">
-                    Water is life. It covers 71% of our planet, yet billions live without
-                    safe access. This World Water Day, let's understand why every drop counts.
+                <p className="text-[#94a3b8] text-lg md:text-xl max-w-2xl leading-relaxed mb-10">
+                    2.2 billion people still lack safely managed drinking water. On World
+                    Water Day 2026, we spotlight the crisis and champion the solutions that
+                    will define our future.
                 </p>
-                <p className="text-cyan-400/70 text-sm mb-10 italic">
-                    2026 Theme: "Glacier Preservation — Water for Tomorrow"
-                </p>
+                
+                {/* Theme Box */}
+                <div className="inline-block px-6 py-3 rounded-full border border-[#1e293b] bg-[#0f172a]/50 backdrop-blur-md mb-12">
+                    <span className="text-[#2dd4bf] font-medium text-sm md:text-base">
+                        2026 Theme: Glacier Preservation — Water for Tomorrow
+                    </span>
+                </div>
+
+                <br />
 
                 {/* Scroll CTA */}
                 <a
                     href="#importance"
-                    className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-white text-base transition-all duration-300 hover:scale-105"
+                    className="inline-flex items-center justify-center px-10 py-4 rounded-full font-bold text-[#020617] text-lg transition-transform hover:scale-105"
                     style={{
-                        background: 'linear-gradient(135deg, #0077be, #14b8a6)',
-                        boxShadow: '0 0 30px rgba(0, 150, 200, 0.5), 0 0 60px rgba(0, 150, 200, 0.2)',
+                        background: '#5eead4',
+                        boxShadow: '0 0 30px rgba(94, 234, 212, 0.3)',
                     }}
                 >
-                    Dive In 🌊
+                    Dive In
                 </a>
             </div>
 
             {/* Scroll indicator */}
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-cyan-400/60 animate-bounce">
-                <span className="text-xs tracking-widest uppercase">Scroll</span>
-                <ChevronDown size={18} />
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-[#2dd4bf]/60 animate-bounce">
+                <ChevronDown size={24} />
             </div>
         </section>
     )

@@ -2,11 +2,10 @@ import { useState, useEffect } from 'react'
 import { Droplets, Menu, X } from 'lucide-react'
 
 const links = [
-    { label: 'History', href: '#timeline' },
-    { label: 'Smart Tech', href: '#tech' },
-    { label: 'Eco Missions', href: '#missions' },
-    { label: 'Join Us', href: '#roles' },
-    { label: 'Gallery', href: '#gallery' },
+    { label: 'WHY WATER', href: '#importance' },
+    { label: 'HISTORY', href: '#history' },
+    { label: 'SOLUTIONS', href: '#engineering' },
+    { label: 'WATCH', href: '#videos' },
 ]
 
 export default function Navbar() {
@@ -26,22 +25,23 @@ export default function Navbar() {
         >
             <nav className="max-w-6xl mx-auto px-4 flex items-center justify-between">
                 {/* Logo */}
-                <a href="#hero" className="flex items-center gap-2 group">
-                    <div className="w-9 h-9 rounded-full bg-ocean-600/30 border border-ocean-400/40 flex items-center justify-center group-hover:bg-ocean-500/40 transition-colors">
-                        <Droplets size={18} className="text-ocean-300" />
+                <a href="#hero" className="flex items-center gap-3 group">
+                    <div className="w-10 h-10 rounded-full border border-[#2dd4bf] flex items-center justify-center group-hover:bg-[#2dd4bf]/20 transition-colors">
+                        <Droplets size={18} className="text-[#2dd4bf]" />
                     </div>
-                    <span className="font-display font-bold text-white text-sm leading-tight">
-                        WWD <span className="text-ocean-400">2026</span>
+                    <span className="font-display font-bold text-white text-lg tracking-wide leading-tight flex flex-col pt-1">
+                        <span>World Water</span>
+                        <span>Day</span>
                     </span>
                 </a>
 
                 {/* Desktop links */}
-                <ul className="hidden md:flex items-center gap-6">
+                <ul className="hidden md:flex items-center gap-8 ml-8">
                     {links.map(l => (
                         <li key={l.href}>
                             <a
                                 href={l.href}
-                                className="text-sm text-ocean-200 hover:text-white transition-colors font-medium"
+                                className="text-[13px] tracking-widest text-[#94a3b8] hover:text-white transition-colors font-medium uppercase"
                             >
                                 {l.label}
                             </a>
@@ -49,10 +49,10 @@ export default function Navbar() {
                     ))}
                 </ul>
 
-                {/* CTA */}
-                <a href="#roles" className="hidden md:block btn-primary text-sm py-2 px-4">
-                    Join Eco Club
-                </a>
+                {/* CTA - Just Text for Eco Club as requested */}
+                <span className="hidden md:flex items-center text-[#2dd4bf] font-medium tracking-wide">
+                    &mdash; Eco Club
+                </span>
 
                 {/* Mobile toggle */}
                 <button
@@ -73,16 +73,16 @@ export default function Navbar() {
                                 <a
                                     href={l.href}
                                     onClick={() => setOpen(false)}
-                                    className="block text-ocean-200 hover:text-white py-2 px-3 rounded-lg hover:bg-white/5 transition-colors"
+                                    className="block text-[#94a3b8] hover:text-white py-2 px-3 rounded-lg hover:bg-white/5 transition-colors tracking-widest text-[13px] uppercase"
                                 >
                                     {l.label}
                                 </a>
                             </li>
                         ))}
                         <li>
-                            <a href="#roles" onClick={() => setOpen(false)} className="btn-primary block text-center text-sm mt-1">
-                                Join Eco Club
-                            </a>
+                            <span className="block text-[#2dd4bf] py-2 px-3 tracking-wide">
+                                &mdash; Eco Club
+                            </span>
                         </li>
                     </ul>
                 </div>
