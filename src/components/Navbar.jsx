@@ -1,16 +1,19 @@
 import { useState, useEffect } from 'react'
-import { Droplets, Menu, X } from 'lucide-react'
+import { Droplets, Menu, X, ArrowRight } from 'lucide-react'
+import { Link, useLocation } from 'react-router-dom'
 
 const links = [
-    { label: 'WHY WATER', href: '#importance' },
-    { label: 'HISTORY', href: '#history' },
-    { label: 'SOLUTIONS', href: '#engineering' },
-    { label: 'WATCH', href: '#videos' },
+    { label: 'WHY WATER', href: '/#importance' },
+    { label: 'HISTORY', href: '/#history' },
+    { label: 'SOLUTIONS', href: '/#engineering' },
+    { label: 'WATCH', href: '/#videos' },
 ]
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false)
     const [open, setOpen] = useState(false)
+    const location = useLocation()
+    const isSpecialPage = location.pathname !== '/'
 
     useEffect(() => {
         const onScroll = () => setScrolled(window.scrollY > 40)
@@ -20,12 +23,12 @@ export default function Navbar() {
 
     return (
         <header
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'glass-dark py-3 shadow-xl shadow-ocean-900/40' : 'py-5 bg-transparent'
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled || isSpecialPage ? 'glass-dark py-3 shadow-xl shadow-ocean-900/40' : 'py-5 bg-transparent'
                 }`}
         >
             <nav className="max-w-6xl mx-auto px-4 flex items-center justify-between">
                 {/* Logo */}
-                <a href="#hero" className="flex items-center gap-3 group">
+                <Link to="/" className="flex items-center gap-3 group">
                     <div className="w-10 h-10 rounded-full border border-[#2dd4bf] flex items-center justify-center group-hover:bg-[#2dd4bf]/20 transition-colors">
                         <Droplets size={18} className="text-[#2dd4bf]" />
                     </div>
@@ -33,26 +36,53 @@ export default function Navbar() {
                         <span>World Water</span>
                         <span>Day</span>
                     </span>
-                </a>
+                </Link>
 
                 {/* Desktop links */}
                 <ul className="hidden md:flex items-center gap-8 ml-8">
-                    {links.map(l => (
+                    {!isSpecialPage && links.map(l => (
                         <li key={l.href}>
                             <a
-                                href={l.href}
+                                href={l.href.replace('/', '')} // native scroll on same page
                                 className="text-[13px] tracking-widest text-[#94a3b8] hover:text-white transition-colors font-medium uppercase"
                             >
                                 {l.label}
                             </a>
                         </li>
                     ))}
+                    {isSpecialPage && links.map(l => (
+                        <li key={l.href}>
+                            <Link
+                                to={l.href}
+                                className="text-[13px] tracking-widest text-[#94a3b8] hover:text-white transition-colors font-medium uppercase"
+                            >
+                                {l.label}
+                            </Link>
+                        </li>
+                    ))}
                 </ul>
 
-                {/* CTA - Just Text for Eco Club as requested */}
-                <span className="hidden md:flex items-center text-[#2dd4bf] font-medium tracking-wide">
-                    &mdash; Eco Club
-                </span>
+                {/* Right side CTA & Gen Z Link */}
+                <div className="hidden md:flex items-center gap-6">
+                    <span className="text-[#2dd4bf] font-medium tracking-wide whitespace-nowrap">
+                        &mdash; Eco Club
+                    </span>
+                    {!isSpecialPage ? (
+                        <Link 
+                            to="/action" 
+                            className="flex items-center gap-2 bg-[#2dd4bf]/10 border border-[#2dd4bf]/30 hover:bg-[#2dd4bf]/20 text-[#2dd4bf] px-4 py-2 rounded-full text-sm font-bold tracking-wide transition-all hover:scale-105"
+                        >
+                            Gen Z Action <ArrowRight size={16} />
+                        </Link>
+                    ) : (
+                        <Link 
+                            to="/" 
+                            className="flex items-center gap-2 bg-[#2dd4bf]/10 border border-[#2dd4bf]/30 hover:bg-[#2dd4bf]/20 text-[#2dd4bf] px-4 py-2 rounded-full text-sm font-bold tracking-wide transition-all hover:scale-105"
+                        >
+                            Back Home <ArrowRight size={16} />
+                        </Link>
+                    )}
+                </div>
 
                 {/* Mobile toggle */}
                 <button
@@ -68,21 +98,40 @@ export default function Navbar() {
             {open && (
                 <div className="md:hidden glass-dark mx-4 mt-2 rounded-2xl p-4">
                     <ul className="flex flex-col gap-3">
-                        {links.map(l => (
+                        {!isSpecialPage ? links.map(l => (
                             <li key={l.href}>
                                 <a
-                                    href={l.href}
+                                    href={l.href.replace('/', '')}
                                     onClick={() => setOpen(false)}
                                     className="block text-[#94a3b8] hover:text-white py-2 px-3 rounded-lg hover:bg-white/5 transition-colors tracking-widest text-[13px] uppercase"
                                 >
                                     {l.label}
                                 </a>
                             </li>
+                        )) : links.map(l => (
+                            <li key={l.href}>
+                                <Link
+                                    to={l.href}
+                                    onClick={() => setOpen(false)}
+                                    className="block text-[#94a3b8] hover:text-white py-2 px-3 rounded-lg hover:bg-white/5 transition-colors tracking-widest text-[13px] uppercase"
+                                >
+                                    {l.label}
+                                </Link>
+                            </li>
                         ))}
                         <li>
                             <span className="block text-[#2dd4bf] py-2 px-3 tracking-wide">
                                 &mdash; Eco Club
                             </span>
+                        </li>
+                        <li>
+                            <Link 
+                                to={isSpecialPage ? "/" : "/action"}
+                                onClick={() => setOpen(false)}
+                                className="flex items-center justify-between w-full mt-2 bg-[#2dd4bf]/10 border border-[#2dd4bf]/30 text-[#2dd4bf] px-4 py-3 rounded-xl font-bold tracking-wide"
+                            >
+                                {isSpecialPage ? 'Back Home' : 'Gen Z Action'} <ArrowRight size={18} />
+                            </Link>
                         </li>
                     </ul>
                 </div>
