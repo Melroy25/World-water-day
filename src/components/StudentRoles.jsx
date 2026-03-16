@@ -126,7 +126,7 @@ export default function StudentRoles() {
                             href="mailto:ecoclub@sjec.ac.in"
                             className="btn-primary inline-flex items-center gap-2 text-sm"
                         >
-                            📩 Contact the Eco Club
+                            📩 Contact SJEC Eco Club
                         </a>
                     </div>
                 </div>

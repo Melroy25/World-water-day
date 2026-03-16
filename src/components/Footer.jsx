@@ -48,7 +48,7 @@ export default function Footer() {
                             rel="noopener noreferrer"
                             className="flex items-center gap-2 bg-[#2dd4bf]/10 hover:bg-[#2dd4bf]/20 border border-[#2dd4bf]/30 px-5 py-2 rounded-full transition-all text-[#2dd4bf] font-bold text-sm tracking-wide shadow-[0_0_15px_rgba(45,212,191,0.1)] hover:shadow-[0_0_20px_rgba(45,212,191,0.3)]"
                         >
-                            Join Eco Club <ExternalLink size={14} />
+                            Join SJEC Eco Club <ExternalLink size={14} />
                         </a>
                     </div>
                 </div>
@@ -60,7 +60,7 @@ export default function Footer() {
                 <div className="flex flex-col gap-1 items-center">
                     <p className="text-[#94a3b8] text-sm">
                         Developed by{' '}
-                        <span className="text-[#2dd4bf] font-bold text-base tracking-wide" style={{ textShadow: '0 0 12px rgba(45, 212, 191, 0.4)' }}>Eco Club SJEC</span>
+                        <span className="text-[#2dd4bf] font-bold text-base tracking-wide" style={{ textShadow: '0 0 12px rgba(45, 212, 191, 0.4)' }}>SJEC Eco Club</span>
                     </p>
                     <p className="text-[#64748b] text-xs">
                         St. Joseph Engineering College, Mangaluru

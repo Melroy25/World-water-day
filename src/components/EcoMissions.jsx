@@ -41,7 +41,7 @@ export default function EcoMissions() {
             <div className="max-w-6xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-14">
-                    <span className="text-teal-400 text-sm font-semibold uppercase tracking-widest">Eco Club · SJEC</span>
+                    <span className="text-teal-400 text-sm font-semibold uppercase tracking-widest">SJEC Eco Club</span>
                     <h2 className="section-title mt-2">Water-Saving Missions</h2>
                     <p className="section-subtitle">Real initiatives driving measurable impact right here on campus.</p>
                 </div>
